@@ -25,24 +25,3 @@ for dir in "$base_dir"/*; do
         	cd "$base_dir"
 	fi
 done
-: << 'FIN'
-elif [$respuesta == "no" ] 2>/dev/null; then
-	# Recorre todos los directorios en el directorio base
-        for dir in "$base_dir"/*; do
-		if [ -d "$dir/.git" ]; then
-                	echo "Entrando en el directorio: $dir"
-	                cd "$dir" || exit
-       		        # Aquí puedes realizar operaciones dentro del repositorio Git
-               		# Por ejemplo, hacer un git status
-                	echo -e "$verde git fetch: $sinColor"
-        	        git fetch
-       	        	echo -e "$verde git status: $sinColor"
-        	        git status
-       	        	# Regresa al directorio base
-                	cd "$base_dir"
-		fi
-       	done
-else
-       	echo "Respuesta no válida. Por favor, ingresa 'si' o 'no'."
-fi
-FIN
