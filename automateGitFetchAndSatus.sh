@@ -2,18 +2,20 @@
 #https://github.com/DanielCyberSec/BashScripts.git
 rojoNegrita="\e[1;31m"
 verde="\e[32m"
+azul="\e[1;34m"
 sinColor="\e[0m"
 amNeg="\e[1;33m"
 echo -e "${amNeg}######################################"
 echo -e "##           DanielCyberSec         ##"
 echo -e "######################################"
-echo -e "nota: ejecutar al nivel de los directorios clonados $sinColor"
-# Cambia a tu directorio de trabajo donde deseas buscar repositorios Git
-base_dir="/home/daniel/Documentos/"
+echo -e "nota: ejecutar al nivel de los repositorios git (apoyate del comando pwd)"
+echo -e "se recomienda tener activado el agente ssh para la ejecución de este script, posteriormente puede volver a deshabilitarlo."
+echo -e "comando para activarlo: https://github.com/DanielCyberSec/Protocols/blob/main/ssh/activateSSHagent.txt$sinColor"
+read -p "Ingresa el directorio base:" base_dir
 # Recorre todos los directorios en el directorio base
 for dir in "$base_dir"/*; do
 	if [ -d "$dir/.git" ]; then
-        	echo "Entrando en el directorio: $dir"
+        	echo -e "\nEntrando en el directorio: $azul$dir$sinColor"
        		cd "$dir" || exit
         	# Aquí puedes realizar operaciones dentro del repositorio Git
 	        # Por ejemplo, hacer un git status
