@@ -10,7 +10,7 @@ echo -e "##           DanielCyberSec         ##"
 echo -e "######################################"
 echo -e "nota: ejecutar al nivel de los repositorios git (apoyate del comando pwd)"
 echo -e "se recomienda tener activado el agente ssh para la ejecución de este script, posteriormente puede volver a deshabilitarlo."
-echo -e "comando para activarlo: https://github.com/DanielCyberSec/Protocols/blob/main/ssh/activateSSHagent.txt$sinColor"
+echo -e "comando para activarlo: https://github.com/DanielCyberSec/Protocols/blob/main/ssh$sinColor"
 echo "Este es tu directorio actual: $(pwd)" 
 read -p "Ingresa el directorio base: " base_dir
 # Recorre todos los directorios en el directorio base
