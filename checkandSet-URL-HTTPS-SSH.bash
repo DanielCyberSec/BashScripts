@@ -41,7 +41,7 @@ done
 if [ $https = "true" ]; then
 	echo -e "\n${amNeg}Se identificaron las siguientes URLs configuradas con ${azul}HTTPS$sinColor:"
 	for url in "${urls[@]}"; do
-	    echo "$urls"
+	    echo "$url"
 	done
 	echo -e "\n${amNeg}Configurar las URLs de HTTPS a SSH? (si/no): $sinColor"
 	read -p "" respuesta
