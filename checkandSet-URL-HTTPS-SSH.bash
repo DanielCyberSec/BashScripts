@@ -8,8 +8,10 @@ amNeg="\e[1;33m"
 echo -e "${amNeg}######################################"
 echo -e "##           DanielCyberSec         ##"
 echo -e "######################################$sinColor"
-read -p "Ingresa el directorio base donde se encuentran los repositorios git (apoyate del comando pwd):" base_dir
-#base_dir="/home/daniel/Documentos"
+echo -e "nota: ejecutar al nivel de los repositorios git (apoyate del comando pwd)"
+echo "Este es tu directorio actual: $(pwd)" 
+read -p "Ingresa el directorio base: " base_dir
+
 urls=()
 rutas=()
 https=false
