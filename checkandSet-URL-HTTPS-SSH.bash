@@ -8,12 +8,12 @@ amNeg="\e[1;33m"
 echo -e "${amNeg}######################################"
 echo -e "##           DanielCyberSec         ##"
 echo -e "######################################$sinColor"
-# Cambia a tu directorio de trabajo donde deseas buscar repositorios Git
-base_dir="/home/daniel/Documentos"
+read -p "Ingresa el directorio base donde se encuentran los repositorios git (apoyate del comando pwd):" base_dir
+#base_dir="/home/daniel/Documentos"
 urls=()
 rutas=()
 https=false
-# Recorre todos los directorios en el directorio base
+# Recorre todos los directorios en el directorio base_dir
 for dir in "$base_dir"/*; do
         if [ -d "$dir/.git" ]; then
                 cd "$dir" || exit
