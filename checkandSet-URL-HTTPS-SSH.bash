@@ -47,10 +47,7 @@ if [ $https = "true" ]; then
 	read -p "" respuesta
 	if [ $respuesta = "si" ]; then
 		for i in "${!rutas[@]}"; do
-			#echo "${rutas[i]}"
-			#echo "${urls[i]}"
 			cd "${rutas[i]}" || exit
-			pwd
 			#git remote set-url origin "$urls[i]" | awk -F'//' '{print "git@" $2}' | sed 's/\//:/'
 			url_https="${urls[i]}"
 		        # Convertir la URL de HTTPS a SSH
@@ -67,13 +64,11 @@ if [ $https = "true" ]; then
 			                cd "$dir" || exit
 			                url=$(git remote get-url origin)
 			                protocol=$(echo "$url" | cut -d '@' -f 1 | cut -d ':' -f 1)
-			                #protocol=$(git remote -v | head -n 1 | awk '{print $2}' | cut -d '@' -f 1 | cut -d ':' -f 1)
 			                if [ "$protocol" = "git" ]; then
 			                        echo -e "$verde SSH $sinColor"
 			                elif [ "$protocol" = "https" ]; then
 			                        #https=true
 			                        echo -e "$azul HTTPS $sinColor"
-			                        #urls+=($(git remote -v | head -n 1 | awk '{print $2}'))
 			                        urls+=($url)
 			                        rutas+=($dir)
 			                else
